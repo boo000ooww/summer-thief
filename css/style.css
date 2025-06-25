@@ -1,0 +1,257 @@
+/* 🌐 Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #E4E4E4;
+}
+
+#wrapper {
+  filter: saturate(100%);
+  transition: filter 0.5s ease;
+}
+
+/* 🎯 Phase 1 */
+.phase1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  z-index: 10;
+}
+
+.phase1-caption {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #ccc;
+  font-family: 'Diphylleia', serif;
+  z-index: 11;
+}
+
+.phase1-caption .left-text,
+.phase1-caption .right-text {
+  white-space: nowrap;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(50%);
+}
+
+.circle-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  transition: all 1.5s ease;
+  z-index: 2;
+}
+
+.circle-container.expanded {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -60%); /* ✅ 덜 올라가게 조정 */
+  width: 1500px;
+  height: 1500px;
+  z-index: 5;
+}
+
+.circle-img {
+  width: 100%;
+  height: auto;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  z-index: 2;
+  position: relative;
+  display: block;
+  object-fit: contain;
+  image-rendering: auto;
+}
+
+.circle-gif {
+  position: absolute;
+  width: 60%;
+  height: auto;
+  top: 91.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+
+.circle-gif.visible {
+  opacity: 1;
+}
+
+.circle-text {
+  margin-top: 20px;
+  text-align: center;
+  color: #aaa;
+  font-size: 1.1rem;
+}
+
+/* 📖 Phase 2 */
+.phase2 {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100vw;
+  height: 100vh;
+  background: #E4E4E4;
+  display: flex;
+  transition: left 1s ease;
+  overflow: hidden;
+  z-index: 5;
+  font-family: 'Diphylleia', serif;
+}
+
+.phase2.visible {
+  left: 0;
+}
+
+.spine-section {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  height: 100%;
+  transition: all 0.5s ease;
+  border-right: 1px solid #ffffff;
+}
+
+.spine-label {
+  writing-mode: vertical-rl;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #13A84C;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #E4E4E4;
+  z-index: 2;
+  width: 100px;
+  min-width: 100px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.content-panel {
+  display: none;
+  width: calc(100vw - 100px * 7);
+  height: 97%;
+  background: #E4E4E4;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.content-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.spine-section.active .content-panel {
+  display: flex;
+}
+.spine-section:not(.active) .content-panel {
+  display: none;
+}
+
+/* 📌 Phase 2 Caption */
+.phase2-caption {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 50px;
+  background: #00AA47;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  font-size: 0.8rem;
+  font-family: 'Pretendard', sans-serif;
+  z-index: 999;
+}
+
+.caption-left,
+.caption-right {
+  white-space: nowrap;
+}
+
+body[data-phase="phase1"] .phase2-caption {
+  display: none;
+}
+
+/* 📘 Phase 3 */
+.phase3 {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100vw;
+  height: 100vh;
+  background: #E4E4E4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: left 1s ease;
+  z-index: 10;
+  
+}
+
+.phase3.visible {
+  left: 0;
+}
+
+.phase3-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.phase3-link:hover {
+  transform: scale(1.03);
+  opacity: 0.85;
+}
+
+.phase3-image {
+  max-width: 70%;
+  max-height: 70%;
+  object-fit: contain;
+  display: block;
+}
+
+/* 🚫 숨김 전용 */
+.hidden {
+  display: none;
+}
