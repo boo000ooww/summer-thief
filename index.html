@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>도둑이 든 여름</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Google Fonts: Diphylleia -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Diphylleia&display=swap" rel="stylesheet">
+</head>
+<body data-phase="phase1"> <!-- ✅ 상태를 나타내는 속성 -->
+
+<audio id="clickSound" src="sound/walking_grass.mp3" preload="auto"></audio>
+
+
+  <div id="wrapper">
+    
+    <!-- ✅ Phase 1 -->
+    <section class="phase1" id="phase1">
+      <div class="circle-container" id="circleContainer">
+        <img src="images/circle.svg" alt="circle" class="circle-img" id="circleImg" />
+        <img src="images/img.gif" alt="gif" class="circle-gif" id="circleGif" />
+      </div>
+      <video id="bgVideo" class="bg-video" muted>
+        <source src="images/tree.mp4" type="video/mp4" />
+      </video>
+
+      <div class="phase1-caption">
+    <span class="left-text">〈그대는 나의 여름이 되세요〉 中 264p, 도둑이 든 여름</span>
+    <span class="right-text">/서덕준</span>
+     </div>
+
+    </section>
+
+    
+
+    <!-- ✅ Phase 2 -->
+    <section class="phase2" id="phase2">
+      <div class="spine-section active" data-index="0">
+        <div class="spine-label">내가</div>
+        <div class="content-panel"><img src="images/1.jpg" alt="#1" /></div>
+      </div>
+      <div class="spine-section" data-index="1">
+        <div class="spine-label">세상의 꽃들과</div>
+        <div class="content-panel"><img src="images/2.jpg" alt="#2" /></div>
+      </div>
+      <div class="spine-section" data-index="2">
+        <div class="spine-label">들풀</div>
+        <div class="content-panel"><img src="images/3.jpg" alt="#3" /></div>
+      </div>
+      <div class="spine-section" data-index="3">
+        <div class="spine-label">숲의 색을</div>
+        <div class="content-panel"><img src="images/4.jpg" alt="#4" /></div>
+      </div>
+      <div class="spine-section" data-index="4">
+        <div class="spine-label">모두 훔쳐올테니</div>
+        <div class="content-panel"><img src="images/5.jpg" alt="#5" /></div>
+      </div>
+      <div class="spine-section" data-index="5">
+        <div class="spine-label">전부 그대의 것 하십시오.</div>
+        <div class="content-panel"><img src="images/6.jpg" alt="#6" /></div>
+      </div>
+      <div class="spine-section" data-index="6">
+        <div class="spine-label" id="toPhase3">그러니</div> <!-- ✅ Phase 3 트리거 -->
+        <div class="content-panel"><img src="images/7.jpg" alt="#7" /></div>
+      </div>
+      <div class="spine-section" data-index="7">
+        <div class="spine-label"></div>
+        <div class="content-panel"><img src="images/8.jpg" alt="#8" /></div>
+      </div>
+    </section>
+
+   <section class="phase3" id="phase3">
+  <a href="https://ebook-product.kyobobook.co.kr/dig/epd/ebook/E000005637502"
+     class="phase3-link"
+     target="_blank"
+     rel="noopener noreferrer">
+    <img src="images/book.jpg" alt="Center Image" class="phase3-image" />
+  </a>
+</section>
+
+
+    <!-- ✅ 항상 아래에 고정되지만, phase1에서는 숨김 -->
+    <div class="phase2-caption">
+      <span class="caption-left">〈그대는 나의 여름이 되세요〉 中 264p, 도둑이 든 여름</span>
+      <span class="caption-right">/ 서덕준</span>
+    </div>
+
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
